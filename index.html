@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PawLife · 宠物生活</title>
+<style>
+:root{--ink:#30243b;--muted:#5d4d66;--paper:#fffaf4;--purple:#e9defe;--pink:#ffd9e3;--mint:#d8f0dd;--yellow:#ffedb4;--line:#e8dce8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #733eb1;outline-offset:4px}.wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}.logo{display:inline-flex;align-items:center;gap:9px;font-size:25px;font-weight:900;letter-spacing:-.05em}.mark{display:grid;place-items:center;background:var(--purple);width:40px;height:40px;border-radius:14px;font-size:20px}.nav{display:flex;gap:4px;flex-wrap:wrap}.nav a,.lang{padding:8px 13px;border-radius:999px;font-weight:700;font-size:.9rem}.nav a[aria-current]{background:var(--purple)}.nav a:hover,.lang:hover{background:var(--pink)}.lang{border:1px solid var(--line);background:white;white-space:nowrap}.hero{display:grid;grid-template-columns:1fr .9fr;align-items:center;overflow:hidden;background:var(--purple);border-radius:34px;margin-top:15px;min-height:440px}.hero-copy{padding:clamp(26px,5.5vw,72px)}.eyebrow{font-size:.83rem;font-weight:800;letter-spacing:.13em;color:#633f83}.hero h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:1.05;letter-spacing:-.05em;margin:.2em 0 .3em}.hero p,.page-title p,.card p{color:var(--muted)}.hero p{max-width:36ch;margin-bottom:25px}.pill{display:inline-block;padding:11px 19px;background:var(--ink);color:white;border-radius:999px;font-weight:750}.pill:hover{background:#59366e}.art{position:relative;min-height:330px;align-self:stretch;display:grid;place-items:center;isolation:isolate}.art:before{content:"";position:absolute;width:72%;aspect-ratio:1;background:var(--pink);border-radius:47% 53% 57% 43%;transform:rotate(-15deg);z-index:-1}.pets{font-family:"Segoe UI Emoji",sans-serif;font-size:clamp(70px,11vw,142px);line-height:1;white-space:nowrap;transform:rotate(-8deg);filter:drop-shadow(0 12px 4px #7c4f6125)}.spark{position:absolute;font-size:clamp(26px,5vw,64px);color:#714793}.one{top:12%;left:13%}.two{bottom:10%;right:12%;color:#af4c72}.three{top:16%;right:9%;font-size:34px}.section{margin-block:45px 54px}.section h2,.page-title h1{letter-spacing:-.04em;line-height:1.1}.section h2{font-size:clamp(1.7rem,4vw,2.6rem);margin:0 0 20px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{border-radius:24px;background:#fff;border:1px solid var(--line);padding:22px;min-width:0}.tile:hover{box-shadow:0 5px 0 #30243b20;transform:translateY(-2px)}.card h2,.card h3{margin:12px 0 5px;font-size:1.25rem}.card p{margin:6px 0 14px}.tile p{margin-bottom:10px}.icon{display:grid;place-items:center;width:54px;height:54px;border-radius:17px;background:#fff9;font-size:29px}.pink{background:var(--pink)}.mint{background:var(--mint)}.yellow{background:var(--yellow)}.purple{background:var(--purple)}.page-title{border-radius:30px;padding:clamp(22px,5vw,56px);margin:15px 0 24px}.page-title h1{font-size:clamp(2.2rem,6vw,4.3rem);margin:0}.page-title p{margin:10px 0 0}.visual{display:grid;place-items:center;min-height:150px;border-radius:18px;font-size:72px}.tag{font-size:.8rem;font-weight:750;color:#633f83}details{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}summary{cursor:pointer;font-weight:750}footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:.88rem}.footer{display:flex;justify-content:space-between;gap:12px}main{min-height:70vh}.skip{position:absolute;left:15px;top:-80px;z-index:2}.skip:focus{top:10px}
+@media(max-width:760px){.bar{flex-wrap:wrap}.nav{order:3;width:100%}.hero{grid-template-columns:1fr}.art{min-height:240px}.art:before{width:min(65%,280px)}.pets{font-size:92px}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.wrap{width:calc(100% - 28px)}.nav a{padding:7px 8px;font-size:.83rem}.grid{grid-template-columns:1fr}.hero{min-height:0}.hero-copy{padding-bottom:8px}.footer{flex-wrap:wrap}.art{min-height:205px}}
+@media(prefers-reduced-motion:no-preference){.tile{transition:transform .15s,box-shadow .15s}}
+</style>
+</head>
+<body>
+<a class="skip pill" href="#main" data-en="Skip to content">跳至正文</a>
+<header class="wrap bar">
+<a class="logo" href="#home"><span class="mark" aria-hidden="true">🐾</span>PawLife</a>
+<nav class="nav" aria-label="主导航">
+<a href="#home" data-en="Home">首页</a><a href="#community" data-en="Community">社区</a><a href="#shop" data-en="Shop">商城</a><a href="#care" data-en="Pet care">养宠知识</a>
+</nav>
+<button class="lang" type="button" lang="en">English</button>
+</header>
+<main class="wrap" id="main" tabindex="-1">
+<section id="home">
+<div class="hero"><div class="hero-copy">
+<span class="eyebrow" data-en="THE GOOD PET LIFE">毛孩子的日常</span>
+<h1 data-en="Little paws, big joy.">小爪爪，<br>大快乐。</h1>
+<p data-en="Meet fellow pet people, discover everyday essentials, and find ideas for life with your best little friend.">来分享毛孩子的趣事、逛逛宠物好物，再收藏几条养宠小窍门。</p>
+<a class="pill" href="#community" data-en="Explore the community →">逛逛社区 →</a>
+</div><div class="art" aria-hidden="true"><span class="spark one">✦</span><span class="spark two">♡</span><span class="spark three">✧</span><span class="pets">🐶🐱</span></div></div>
+<div class="section"><h2 data-en="Where to today?">今天想去哪儿？</h2><div class="grid">
+<a class="card tile pink" href="#community"><span class="icon" aria-hidden="true">💬</span><h3 data-en="Community">宠物社区</h3><p data-en="Everyday moments from life with pets.">看看铲屎官们的日常故事。</p><span aria-hidden="true">→</span></a>
+<a class="card tile mint" href="#shop"><span class="icon" aria-hidden="true">🛍️</span><h3 data-en="Shop">宠物商城</h3><p data-en="Browse ideas for play, rest, and walks.">发现陪玩、休息与出门的好物。</p><span aria-hidden="true">→</span></a>
+<a class="card tile yellow" href="#care"><span class="icon" aria-hidden="true">📚</span><h3 data-en="Pet care">养宠知识</h3><p data-en="Small routines for happier days together.">从日常小习惯开始，好好陪伴。</p><span aria-hidden="true">→</span></a>
+</div></div>
+</section>
+<section id="community" hidden>
+<div class="page-title pink"><h1 data-en="Pet community">宠物社区</h1><p data-en="Three sample posts about the small moments worth sharing.">三篇示例动态，记录值得分享的小事。</p></div>
+<div class="section grid">
+<article class="card"><div class="visual yellow" aria-hidden="true">🐕</div><h2 data-en="Mochi’s first park walk">麻薯第一次逛公园</h2><span class="tag" data-en="Dog diaries">狗狗日记</span><p data-en="Mochi stopped at every tree. We barely made it around the path, and that was the best part.">麻薯每棵树都要闻一下。绕小路走了一圈，最开心的就是这些慢下来的时刻。</p></article>
+<article class="card"><div class="visual purple" aria-hidden="true">📦</div><h2 data-en="The box wins again">纸箱又赢了</h2><span class="tag" data-en="Cat diaries">猫咪日记</span><p data-en="Taro spent five minutes inspecting the new bed and the whole afternoon napping in its box.">芋圆花了五分钟检查新猫窝，然后在装猫窝的纸箱里睡了一下午。</p></article>
+<article class="card"><div class="visual mint" aria-hidden="true">🐾</div><h2 data-en="Our rainy-day game">雨天寻宝游戏</h2><span class="tag" data-en="Indoor play">室内陪玩</span><p data-en="We hid a favourite toy behind a cushion. By round three, Nori was checking every cushion in the room.">我们把海苔最喜欢的玩具藏在靠垫后面。到第三轮，它已经会挨个检查所有靠垫了。</p></article>
+</div></section>
+<section id="shop" hidden>
+<div class="page-title mint"><h1 data-en="Pet shop">宠物商城</h1><p data-en="A sample catalogue for playtime, naps, and adventures.">陪玩、午睡、出门，看看这三款示例商品。</p></div>
+<div class="section grid">
+<article class="card"><div class="visual pink" aria-hidden="true">🎾</div><h2 data-en="Peach play ball">蜜桃玩具球</h2><span class="tag" data-en="Play">陪玩</span><p data-en="A peach-coloured ball for a game of fetch together.">蜜桃配色的玩具球，适合和狗狗一起玩捡球游戏。</p></article>
+<article class="card"><div class="visual purple" aria-hidden="true">🛏️</div><h2 data-en="Cloud nap bed">云朵午睡窝</h2><span class="tag" data-en="Rest">休息</span><p data-en="A round, cushioned spot for pets who like to curl up.">圆形软垫小窝，给喜欢蜷起来睡觉的毛孩子留个角落。</p></article>
+<article class="card"><div class="visual yellow" aria-hidden="true">🎒</div><h2 data-en="Mint walk pouch">薄荷随行包</h2><span class="tag" data-en="Walks">外出</span><p data-en="A small pouch for waste bags, treats, and keys on a walk.">散步时装拾便袋、零食和钥匙的小包。</p></article>
+</div></section>
+<section id="care" hidden>
+<div class="page-title yellow"><h1 data-en="Pet care guides">养宠知识</h1><p data-en="Practical ideas for getting ready, going out, and playing at home.">从到家准备、散步到室内游戏，试试这些日常小点子。</p></div>
+<div class="section grid">
+<article class="card"><div class="icon purple" aria-hidden="true">🏠</div><h2 data-en="Getting ready for a new pet">迎接新成员</h2><p data-en="Set up a quiet corner before the first day.">在毛孩子到家前，先准备一个安静的小角落。</p><details><summary data-en="Read the checklist">展开清单</summary><ul><li data-en="Set out a bed and a bowl of fresh water.">放好休息垫和干净的饮水。</li><li data-en="Put loose cords and small objects out of reach.">收好散落的电线和小物件。</li><li data-en="Let your pet explore the space at their own pace.">让毛孩子按自己的节奏熟悉环境。</li></ul></details></article>
+<article class="card"><div class="icon mint" aria-hidden="true">🦮</div><h2 data-en="Before a dog walk">散步前的小准备</h2><p data-en="Take a moment to check the leash and pack what you need.">出门前花一点时间检查牵引绳、带齐随身物品。</p><details><summary data-en="Read the checklist">展开清单</summary><ul><li data-en="Check that the harness fits and the leash is clipped in.">确认胸背带贴合，牵引扣已扣好。</li><li data-en="Bring waste bags and water.">带上拾便袋和饮水。</li><li data-en="Allow time for sniffing along the way.">途中留点时间，让狗狗慢慢闻一闻。</li></ul></details></article>
+<article class="card"><div class="icon pink" aria-hidden="true">🧶</div><h2 data-en="Playing with an indoor cat">陪室内猫咪玩耍</h2><p data-en="Try short, interactive games and let your cat set the pace.">试试短时间的互动游戏，让猫咪决定玩多久。</p><details><summary data-en="Read the tips">展开小贴士</summary><ul><li data-en="Move a wand toy along the floor and let your cat catch it.">沿地面移动逗猫棒，给猫咪机会抓到它。</li><li data-en="Pause when your cat walks away.">猫咪走开时，先暂停游戏。</li><li data-en="Put string toys away when play ends.">玩完后收好带绳的玩具。</li></ul></details></article>
+</div></section>
+</main>
+<footer><div class="wrap footer"><strong>🐾 PawLife</strong><span data-en="Bilingual pet lifestyle demo">双语宠物生活展示站</span></div></footer>
+<script>
+const languageButton = document.querySelector('.lang');
+const nav = document.querySelector('.nav');
+const main = document.querySelector('main');
+const pages = [...main.querySelectorAll(':scope > section')];
+const translations = [...document.querySelectorAll('[data-en]')].map(element => ({
+  element,
+  chinese: [...element.childNodes].map(node => node.cloneNode(true)),
+  english: element.dataset.en
+}));
+let language = 'zh';
+try { if (localStorage.getItem('pawlife-language') === 'en') language = 'en'; } catch {}
+function showPage() {
+  const requested = location.hash.slice(1);
+  const active = pages.find(page => page.id === requested) || pages[0];
+  for (const page of pages) page.hidden = page !== active;
+  for (const link of nav.querySelectorAll('a')) {
+    if (link.hash === '#' + active.id) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  }
+  const heading = active.querySelector('h1').innerText.replace(/\s+/g, ' ');
+  document.title = 'PawLife · ' + heading;
+}
+function renderLanguage() {
+  const english = language === 'en';
+  document.documentElement.lang = english ? 'en' : 'zh-Hans';
+  for (const translation of translations) {
+    if (english) translation.element.textContent = translation.english;
+    else translation.element.replaceChildren(...translation.chinese.map(node => node.cloneNode(true)));
+  }
+  languageButton.textContent = english ? '中文' : 'English';
+  languageButton.lang = english ? 'zh-Hans' : 'en';
+  nav.setAttribute('aria-label', english ? 'Main navigation' : '主导航');
+  showPage();
+}
+languageButton.addEventListener('click', () => {
+  language = language === 'en' ? 'zh' : 'en';
+  try { localStorage.setItem('pawlife-language', language); } catch {}
+  renderLanguage();
+});
+document.querySelector('.skip').addEventListener('click', event => {
+  event.preventDefault();
+  main.focus();
+});
+window.addEventListener('hashchange', () => {
+  showPage();
+  window.scrollTo(0, 0);
+  main.focus({ preventScroll: true });
+});
+renderLanguage();
+</script>
+</body>
+</html>
